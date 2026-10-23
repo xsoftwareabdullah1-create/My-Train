@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: my-train-api
+    runtime: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: QRAIL_API_KEY
+        sync: false
+      - key: ALLOWED_ORIGIN
+        value: "*"
